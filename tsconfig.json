@@ -1,12 +1,11 @@
 {
 	"compilerOptions": {
-		"declaration": true,
-		"outDir": "dist",
-		"rootDir": "src",
+		"lib": ["DOM", "ES2022", "ESNext.Disposable"],
 		"strict": true,
 		"target": "ES2022",
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext"
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": ["node", "vite/client", "vitest/globals"]
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["src/**/*.ts", "test/**/*.ts", "vite.config.ts"]
 }

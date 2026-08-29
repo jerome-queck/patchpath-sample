@@ -1,17 +1,32 @@
 {
 	"name": "patchpath-sample",
 	"version": "1.0.0",
+	"description": "Runnable controlled sample of PatchPath's first-contributor empty states",
 	"private": true,
 	"type": "module",
+	"engines": {
+		"node": ">=22.13.0",
+		"npm": ">=10.9.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jerome-queck/patchpath-sample.git"
+	},
 	"scripts": {
-		"build": "tsc --project tsconfig.json",
-		"format:check": "biome ci --linter-enabled=false --assist-enabled=false src test package.json tsconfig.json",
+		"build": "vite build",
+		"dev": "vite",
+		"format:check": "biome ci --linter-enabled=false --assist-enabled=false src test index.html package.json tsconfig.json vite.config.ts",
 		"lint": "biome lint src test",
-		"test": "npm run build && node --test test/*.test.js",
-		"typecheck": "tsc --project tsconfig.json --noEmit"
+		"test": "vitest run",
+		"typecheck": "tsc --project tsconfig.json --noEmit",
+		"verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.11",
-		"typescript": "7.0.2"
+		"@types/node": "^22.19.19",
+		"jsdom": "^28.1.0",
+		"typescript": "7.0.2",
+		"vite": "^8.2.2",
+		"vitest": "^4.1.0"
 	}
 }
