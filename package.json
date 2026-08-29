@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsc --project tsconfig.json",
-		"format:check": "biome format src test package.json tsconfig.json",
+		"format:check": "biome ci --linter-enabled=false --assist-enabled=false src test package.json tsconfig.json",
 		"lint": "biome lint src test",
 		"test": "npm run build && node --test test/*.test.js",
 		"typecheck": "tsc --project tsconfig.json --noEmit"
