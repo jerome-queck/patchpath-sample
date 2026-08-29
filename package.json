@@ -1,14 +1,17 @@
 {
-  "name": "patchpath-sample",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "tsc --project tsconfig.json",
-    "test": "npm run build && node --test test/*.test.js",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
-  },
-  "devDependencies": {
-    "typescript": "7.0.2"
-  }
+	"name": "patchpath-sample",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "tsc --project tsconfig.json",
+		"format:check": "biome format src test package.json tsconfig.json",
+		"lint": "biome lint src test",
+		"test": "npm run build && node --test test/*.test.js",
+		"typecheck": "tsc --project tsconfig.json --noEmit"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.11",
+		"typescript": "7.0.2"
+	}
 }
